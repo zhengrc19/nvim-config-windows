@@ -1,0 +1,106 @@
+#module
+snippet module
+    module ${1:ModuleName} (
+        ${2://Parameter}
+    );
+        ${3://Code}
+    endmodule
+endsnippet
+
+#parameter
+snippet pa
+    parameter ${1:S0} = ${2:2'b00};
+    ${3}
+endsnippet
+
+#always block
+snippet al
+    always @(${1:*}) begin
+        ${2://Code}
+    end
+endsnippet
+
+#if block
+snippet if
+    if (${1:/*Condition*/}) begin
+        ${2://Code}
+    end
+endsnippet
+
+#ifel block
+snippet ifel
+    if (${1:/*Condition*/}) begin
+        ${2://Code}
+    end else begin
+        ${3://Code}
+    end
+endsnippet
+
+#el block
+snippet el
+    else begin
+        ${1://Code}
+    end
+endsnippet
+
+#eli block
+snippet eli
+    else if (${1:/*Condition*/}) begin
+        ${2://Code}
+    end
+endsnippet
+
+#assign statement
+snippet as
+    assign ${1:Out} = ${2:(In == 1)?(1):(0)};
+    ${3}
+endsnippet
+
+
+#case block
+snippet case
+    case(${1:State}) begin
+        ${2:default}: begin
+            ${3://Code}
+        end
+    endcase
+endsnippet
+
+
+#header
+snippet header
+    //-----------------------------------------------------
+    // Design Name : ${1:Mux}
+    // File Name : ${2:Mux}.v
+    // Function : ${3:Testing}
+    // Coder    : hydai
+    //-----------------------------------------------------
+endsnippet
+
+
+#timescale 1 ns/100 ps
+snippet time
+    `timescale 1 ns/100 ps
+endsnippet
+
+#initial block
+snippet init
+    initial begin
+        ${1:#0 //do something}
+    end
+endsnippet
+
+#test bench
+snippet test
+    module ${1:TestBench};
+    endmodule // End of ${1:TestBench}
+endsnippet
+
+#dump
+snippet dump
+    initial begin
+    $fsdbDumpfile("${1:FileName}.fsdb");
+    $fsdbDumpvars;
+    end
+endsnippet
+
